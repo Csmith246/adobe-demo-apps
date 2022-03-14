@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adobe Launch</title>
+  <script src="https://assets.adobedtm.com/2d251f50426c/e32ef5c49588/launch-10a43a359d0e-development.min.js"
+    async></script>
+</head>
+
+<body>
+  <h1>Adobe Launch Example</h1>
+  <p>
+    <a href="https://experienceleague.adobe.com/docs/analytics/implementation/launch/deploy-dev.html?lang=en"
+      target="_blank">Documentation</a>
+  </p>
+  <script>
+    setTimeout(() => {
+      var eventTracker = window.s_gi("esridevelopment");
+      console.log("EVENT TRACKER", eventTracker);
+      eventTracker.t({ eVar1: "EVAR1 VALUE", eVar2: "EVAR2 VALUE" });
+      eventTracker.tl(true, "o", "Custom Event", { eVar1: "EVAR1 VALUE", eVar2: "EVAR2 VALUE" });
+    }, 1000);
+  </script>
+</body>
+
+</html>

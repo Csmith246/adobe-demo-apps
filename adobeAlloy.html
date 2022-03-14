@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    !function (n, o) {
+      o.forEach(function (o) {
+        n[o] || ((n.__alloyNS = n.__alloyNS ||
+          []).push(o), n[o] = function () {
+            var u = arguments; return new Promise(
+              function (i, l) { n[o].q.push([i, l, u]) })
+          }, n[o].q = [])
+      })
+    }
+      (window, ["alloy"]);
+  </script>
+  <script src="https://cdn1.adoberesources.net/alloy/2.6.4/alloy.min.js" async></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adobe Alloy</title>
+</head>
+
+<body>
+
+  <h1>Adobe Alloy Example</h1>
+  <p>
+    <a href="https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/installing-the-sdk.html?lang=en"
+      target="_blank">Documentation</a>
+  </p>
+
+  <script>
+    alloy('configure', {
+      edgeConfigId: "0662e130-fc23-4507-a722-11b035dc818a:dev",
+      orgId: "0D15148954E6C5100A4C98BC@AdobeOrg"
+    });
+
+    this.alloy('sendEvent', {
+      data: {
+        __adobe: {
+          target: {
+            "MY TEST DATA": 0,
+            "MY TEST DATA 1": 1,
+            "MY TEST DATA 2": 2,
+          },
+        },
+      },
+    })
+  </script>
+</body>
+
+</html>
